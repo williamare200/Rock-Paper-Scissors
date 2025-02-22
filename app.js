@@ -46,11 +46,11 @@ function getComputerChoice() {
 
 function GetHumanChoice() {
     let humanChoicePrompt = prompt("escriba una de las opciones 'rock', 'paper', 'scissors'", "");
-    if (humanChoicePrompt === "rock") {
+    if (humanChoicePrompt.toLowerCase() === "rock") {
         return "rock";
-    } else if (humanChoicePrompt === "paper") {
+    } else if (humanChoicePrompt.toLowerCase() === "paper") {
         return "paper";
-    } else if (humanChoicePrompt === "scissors") {
+    } else if (humanChoicePrompt.toLowerCase() === "scissors") {
         return "scissors"
     }
 }
@@ -85,8 +85,8 @@ let computerScore = 0;
 
 function playRound(humanChoice, computerChoiceString) {
     const draw = "it's a draw"
-    const win = "you win";
-    const lose = "you lose";
+    const win = "you win " + humanChoice + " beats " + computerChoiceString;
+    const lose = "you lose " + computerChoiceString + " beats " + humanChoice;
 
     if (humanChoice === computerChoiceString) {
         console.log(humanChoice);
