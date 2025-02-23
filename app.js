@@ -56,10 +56,6 @@ function GetHumanChoice() {
 }
 // console.log(GetHumanChoice());
 
-/* // The players score variables */
-
-let humanScore = 0;
-let computerScore = 0;
 
 
 // logic to play a single round 
@@ -126,5 +122,34 @@ function playRound(humanChoice, computerChoiceString) {
 
 }
 
-console.log(playRound(GetHumanChoice(), getComputerChoice()));
+// console.log(playRound(GetHumanChoice(), getComputerChoice()));
 
+// playRound 5 times
+// keep track of the scores 
+let humanScore = 0;
+let computerScore = 0;
+// declare a winner at the end
+
+/* playGame */
+
+function playGame() {
+ /* // The players score variables */
+
+
+// victory and loss variables
+    const victory = "You win the match"
+    const loss = "You loss the match"
+
+// playRound function call 
+    for (let games = 0; games <= 5; games++) {
+
+    playRound(GetHumanChoice(), getComputerChoice());      
+    }
+    if(humanScore > computerScore) {
+        return victory;
+    } else {
+        return loss;
+    }
+}
+
+console.log(playGame(playRound));
