@@ -1,4 +1,4 @@
-console.log("hello")
+console.log("Rock, Paper, Scissors")
 
 /* // getComputerChoice */
 
@@ -38,9 +38,7 @@ function getComputerChoice() {
 /* // GetHumanChoice */
 
 // a function that takes the user choice and returns it
-
 // return one of the valid choice depending on what the user inputs 
-
 // get user input a valid choice
 // return a choice :rock paper scissors
 
@@ -60,7 +58,7 @@ function GetHumanChoice() {
 
 // logic to play a single round 
 
-// function called playRoud 
+/* // function called playRoud  */
 
 // takes human and computer choice as arguments,
 // plays a single round(analize choices)
@@ -79,6 +77,7 @@ function GetHumanChoice() {
 // scissors < rock =  lose
 // scissors > paper = win 
 
+
 function playRound(humanChoice, computerChoiceString) {
     const draw = "it's a draw"
     const win = "you win " + humanChoice + " beats " + computerChoiceString;
@@ -87,37 +86,37 @@ function playRound(humanChoice, computerChoiceString) {
     if (humanChoice === computerChoiceString) {
         console.log(humanChoice);
         console.log(computerChoiceString);
-        return draw;
+        console.log(draw);
     } else if (humanChoice === "rock" && computerChoiceString === "paper") {
         console.log(humanChoice);
         console.log(computerChoiceString);
         computerScore++;
-        return lose;
+         console.log(lose);
     } else if (humanChoice === "rock" && computerChoiceString === "scissors") {
         console.log(humanChoice);
         console.log(computerChoiceString);
         humanScore++;
-        return win;
+        console.log(win)
     } else if (humanChoice === "paper" && computerChoiceString === "scissors") {
         console.log(humanChoice);
         console.log(computerChoiceString);
         computerScore++;
-        return lose;
+        console.log(lose);        
     } else if (humanChoice === "paper" && computerChoiceString === "rock") {
         console.log(humanChoice);
         console.log(computerChoiceString);
         humanScore++;
-        return win;
+        console.log(win);       
     } else if (humanChoice === "scissors" && computerChoiceString === "rock") {
         console.log(humanChoice);
         console.log(computerChoiceString);
         computerScore++;
-        return lose;
+        console.log(lose);    
     } else if (humanChoice === "scissors" && computerChoiceString === "paper") {
         console.log(humanChoice);
         console.log(computerChoiceString);
         humanScore++;
-        return win;
+        console.log(win);      
     }
 
 }
@@ -130,26 +129,28 @@ let humanScore = 0;
 let computerScore = 0;
 // declare a winner at the end
 
-/* playGame */
+/* function playGame */
 
 function playGame() {
  /* // The players score variables */
-
+    humanScore = 0;
+    computerScore = 0;
 
 // victory and loss variables
     const victory = "You win the match"
     const loss = "You loss the match"
 
 // playRound function call 
-    for (let games = 0; games <= 5; games++) {
+    for (let games = 1; games <= 5; games++) {
 
-    playRound(GetHumanChoice(), getComputerChoice());      
+    playRound(GetHumanChoice(), getComputerChoice())
+
     }
     if(humanScore > computerScore) {
-        return victory;
+        console.log(victory) ;
     } else {
-        return loss;
+        console.log(loss);
     }
 }
 
-console.log(playGame(playRound));
+playGame();
